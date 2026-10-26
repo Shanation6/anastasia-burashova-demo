@@ -55,3 +55,13 @@ test('normal motion reflows at phone, tablet and desktop widths', async ({ page 
     }
   }
 });
+
+test('booking shortcut stays fixed and clears the form at the 700px breakpoint', async ({ page }) => {
+  await page.setViewportSize({ width: 700, height: 900 });
+  await page.goto('./');
+  const shortcut = page.locator('.mobile-booking');
+  await expect(shortcut).toHaveCSS('position', 'fixed');
+  await page.locator('#booking').scrollIntoViewIfNeeded();
+  await expect(shortcut).toHaveClass(/is-hidden/);
+  await expect.poll(async () => (await shortcut.boundingBox()).y).toBeGreaterThan(900);
+});

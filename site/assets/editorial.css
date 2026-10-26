@@ -738,7 +738,8 @@ h2 em { color: var(--olive); }
   .footer-social { font-size: 13px; gap: 25px; margin-top: 26px; }
   .footer-bottom { font-size: 10px; display: flex; flex-wrap: wrap; gap: 16px 23px; padding-block: 23px; }
   .footer-bottom > span { flex-basis: 100%; }
-  .mobile-booking { display: flex; bottom: calc(13px + env(safe-area-inset-bottom, 0px)); left: 20px; right: 20px; padding: 15px 22px; font-size: 13px; border-radius: 100px; min-height: 55px; border-color: #8f9d7f; background: var(--green); box-shadow: 0 5px 20px #21342426; }
+  .mobile-booking { display: flex; position: fixed; align-items: center; justify-content: space-between; bottom: calc(13px + env(safe-area-inset-bottom, 0px)); left: 20px; right: 20px; padding: 15px 22px; font-size: 13px; border-radius: 100px; min-height: 55px; border-color: #8f9d7f; background: var(--green); box-shadow: 0 5px 20px #21342426; transition: transform 180ms ease-out; }
+  .mobile-booking.is-hidden { transform: translateY(calc(100% + 40px + env(safe-area-inset-bottom, 0px))); }
   .mobile-booking span { font-size: 23px; }
 }
 

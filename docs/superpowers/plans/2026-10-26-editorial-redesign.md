@@ -28,8 +28,12 @@ UI UX Pro Max's broad design-system suggestions were checked: the initial Liquid
 - [x] Recompose the public page, introduce `site/assets/editorial.css` and `site/assets/motion.mjs`, retain booking selectors and behavior.
 - [x] Integrate the generated atmospheric image if successful; self-host and document its role. Preserve the original portrait. The final JPEG is 319,088 bytes; the original generated PNG is preserved outside the repository.
 - [x] Verify widths 320/390/768/1024/1440, desktop/mobile screenshots, normal/reduced/no-JS motion, keyboard and entire booking/admin flow.
-- [x] Run unit and browser suites, module checks, link/asset crawl and clean diff verification. Seven unit and eight browser tests pass; all primary demo flows remain working. Screenshots cover normal, paused and reduced motion. Lazy image screenshots explicitly await decode, avoiding partial JPEG render captures.
+- [x] Run unit and browser suites, module checks, link/asset crawl and clean diff verification. Seven unit and nine browser tests pass; all primary demo flows remain working. Screenshots cover normal, paused and reduced motion. Lazy image screenshots explicitly await decode, avoiding partial JPEG render captures.
 - [ ] Fresh independent review, fix material findings, commit and push to the existing repository; wait for successful Pages deployment and verify live behavior.
+
+## Independent review and final polish
+
+Fresh read-only review found no Critical or Important issues. Its one minor finding was the 601–760px CTA breakpoint (enabled in the new stylesheet but positioned only by the old <=600px stylesheet). Because this is part of the user's expressly requested responsive visual polish, it is corrected before publication: a 700px regression first demonstrated `position: static`; the dedicated public stylesheet now owns fixed placement and the hidden transform through 760px. No other review issues were deferred. Scope decisions: existing professional facts remain sourced from the original research, demo authentication remains intentional, and deployment is verified separately after publication.
 
 ## Review focus
 
