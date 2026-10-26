@@ -4,6 +4,10 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
+    "test:e2e": "playwright test",
     "preview": "python -m http.server 4173 --directory site"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
   }
 }
