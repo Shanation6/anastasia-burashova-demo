@@ -50,10 +50,10 @@
 **Files:** `.github/workflows/pages.yml`, `.gitignore`, `README.md`, execution notes.
 
 - [x] Add Pages deployment of `site/`, document demo login, sources, limitations and local preview.
-- [ ] Run Node suite, module syntax checks and local relative-link/asset crawl under a repository subpath.
-- [ ] Commit verified source, obtain fresh independent review, address material findings.
-- [ ] Create a new public GitHub repository using the existing authenticated account; push and enable GitHub Pages Actions.
-- [ ] Observe deployment success and fetch the final live URL. Return live site, admin demo and repository links.
+- [x] Run Node suite, module syntax checks and local relative-link/asset crawl under a repository subpath: 7 unit tests and 4 browser scenarios passed; modules parsed; all local HTML/CSS links resolved.
+- [x] Commit verified source, obtain fresh independent review, address material findings: review of `7905ba3..5a625c2` returned no Critical, Important or Minor findings.
+- [x] Create a new public GitHub repository using the existing authenticated account; push and enable GitHub Pages Actions.
+- [x] Observe deployment success and fetch the final live URL: Actions run `40283635984` succeeded for application commit `5a625c2`; public homepage and admin login both returned HTTP 200.
 
 ## Execution notes
 
@@ -62,3 +62,5 @@
 - Original server/security requirements intentionally superseded by the user's demo-only GitHub Pages instruction.
 - Browser tool viewport resizing did not change the actual rendered viewport; independent Playwright tests use a headless instance of the installed Microsoft Edge to verify real viewport changes.
 - GitHub account `Shanation6` verified through existing Git Credential Manager authentication; a new public repository was created and Pages configured to use Actions. No authentication secrets are included in source.
+- Reviewer scope decisions: production authentication/booking delivery are intentionally excluded by the demo amendment; operational legal/portrait clearance is documented for a future real launch; deployment verification was performed by the owner after review. No deferred minor issues.
+- Final public URLs: https://shanation6.github.io/anastasia-burashova-demo/ and https://github.com/Shanation6/anastasia-burashova-demo . Published application payload totals 307,194 bytes, including locally hosted Cyrillic/Latin fonts and the authentic portrait.
