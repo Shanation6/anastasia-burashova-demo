@@ -1,4 +1,7 @@
 import { createDemoStore } from './demo-store.mjs';
+import { initMotion } from './motion.mjs';
+
+initMotion();
 
 const menu = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav');
@@ -11,14 +14,6 @@ menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') 
 nav.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
 document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { setMenu(false); menu.focus(); } });
 document.addEventListener('click', event => { if (!event.target.closest('.header')) setMenu(false); });
-
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-  document.documentElement.classList.add('motion-ready');
-  const observer = new IntersectionObserver(entries => {
-    for (const entry of entries) if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
-  }, { threshold: 0.07 });
-  document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
-}
 
 let selectedFormat = 'online';
 document.querySelectorAll('[data-format]').forEach(button => button.addEventListener('click', () => {

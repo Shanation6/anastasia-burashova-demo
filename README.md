@@ -49,4 +49,12 @@ GitHub Actions проверяет поведение демо и публику�
 
 Шрифты Cormorant Garamond и Manrope размещены локально по SIL Open Font License; тексты лицензий находятся в [assets/fonts](./site/assets/fonts/). Логотип и линейные иллюстрации — SVG, созданные для этого макета.
 
+## Обновлённая арт-дирекция и анимация
+
+Публичная страница использует отдельную [редакционную стилизацию](./site/assets/editorial.css) и [модуль прогрессивного улучшения](./site/assets/motion.mjs). При переработке изучены [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) и навыки [baseline-ui](https://github.com/ibelick/ui-skills/blob/main/skills/baseline-ui/SKILL.md), [fixing-motion-performance](https://github.com/ibelick/ui-skills/blob/main/skills/fixing-motion-performance/SKILL.md) из UI Skills. Существующий стек HTML/CSS/ES-модулей сохранён.
+
+Анимации управляются CSS: последовательное раскрытие заголовка и разделов, небольшие орнаменты, нативный индикатор чтения и scroll/view timelines в поддерживающих браузерах. Нет перехвата прокрутки, обработчика `scroll` или бесконечного JS-цикла. Орнаменты останавливаются вне экрана и при скрытии вкладки. Кнопка паузы в шапке отключает движение; системный `prefers-reduced-motion` показывает статическую композицию. Без JavaScript содержание остаётся видимым.
+
+[Атмосферный натюрморт](./site/assets/images/olive-still-life.jpg) сгенерирован встроенным ImageGen для визуальной паузы, затем закодирован в JPEG без изменения композиции. Это **не фотография кабинета**. Подлинный портрет Анастасии не изменён. Финальный промпт: «Editorial photograph of a sculptural olive branch in a handmade matte olive ceramic vase on pale travertine beside unbleached linen, warm side sunlight and delicate leaf shadows on ivory plaster; vase and branch on the right, quiet negative space on the left; muted ivory and olive, natural texture, no people, text or watermark». Точный исходный промпт и решения отражены в [плане переработки](./docs/superpowers/plans/2026-10-26-editorial-redesign.md).
+
 В [концепции](./docs/superpowers/specs/2026-10-26-psychologist-site-design.md) сохранено уточнение заказчика о демонстрации, которое заменяет первоначально предложенную серверную реализацию.

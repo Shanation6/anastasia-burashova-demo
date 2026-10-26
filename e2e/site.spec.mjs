@@ -15,6 +15,7 @@ test('public site renders at desktop and mobile without overflow or runtime erro
     await page.locator('#formats').scrollIntoViewIfNeeded();
     await expect(page.locator('.format-grid')).toBeVisible();
     if (width === 1440) await page.screenshot({ path: testInfo.outputPath('formats.png') });
+    if (width === 768) await page.screenshot({ path: testInfo.outputPath('tablet-formats.png') });
     await page.locator('#booking').scrollIntoViewIfNeeded();
     if (width === 390) {
       await expect(page.locator('.mobile-booking')).toHaveClass(/is-hidden/);
