@@ -16,3 +16,6 @@
 @media(max-width:360px){.container{width:calc(100% - 32px)}.brand{font-size:18px}.hero h1{font-size:70px}.hero-actions{gap:16px}.hero-actions>.button{font-size:9px;padding:13px 14px;gap:15px}.hero-actions>.text-link{font-size:8px}.hero-description{font-size:11px}.portrait-arch{height:330px}.portrait-caption{font-size:20px;padding:13px 15px}.quiet-band p{font-size:25px}.format-grid{grid-template-columns:minmax(0,1fr)}.format-card{min-width:0}.format-card h3{font-size:36px}.booking-panel{padding:25px 18px}.form-row{grid-template-columns:1fr;gap:0}.form-heading h3{font-size:30px}.review blockquote{font-size:25px}}
 @media(max-width:600px){.hero h1{font-size:clamp(62px,17.5vw,74px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;animation-iteration-count:1!important}.motion-ready .reveal{opacity:1;transform:none}}
+
+/* Vector icons keep their shape and color across system emoji fonts. */
+.ui-icon{display:inline-block;width:1em;height:1em;flex-shrink:0;vertical-align:-.125em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.booking-flower .ui-icon{display:block;stroke-width:1}

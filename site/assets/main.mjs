@@ -45,6 +45,7 @@ form.addEventListener('submit', async event => {
     return;
   }
   const submit = form.querySelector('[type="submit"]');
+  const submitLabel = [...submit.childNodes].map(node => node.cloneNode(true));
   submit.disabled = true;
   submit.textContent = 'Сохраняем демо-заявку…';
   try {
@@ -59,8 +60,7 @@ form.addEventListener('submit', async event => {
     error.textContent = cause instanceof Error ? cause.message : 'Не удалось сохранить демо-заявку. Попробуйте ещё раз.';
   } finally {
     submit.disabled = false;
-    submit.replaceChildren(document.createTextNode('Оставить демо-заявку '));
-    const arrow = document.createElement('span'); arrow.textContent = '↗'; arrow.setAttribute('aria-hidden', 'true'); submit.append(arrow);
+    submit.replaceChildren(...submitLabel);
   }
 });
 document.querySelector('#another-booking').addEventListener('click', () => {
