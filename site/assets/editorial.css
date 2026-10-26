@@ -184,15 +184,13 @@ h2 em { color: var(--olive); }
 .credentials > div > span { font-size: 9px; letter-spacing: .8px; }
 .credentials p { font-size: 13px; line-height: 1.8; margin-top: 15px; }
 
-/* A photographic breath between the denser reading chapters. */
+/* A quiet typographic pause between the denser reading chapters. */
 .pause-section { position: relative; min-height: 610px; overflow: clip; background: #eae3d5; isolation: isolate; }
-.pause-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 55%; z-index: -1; }
 .pause-content { padding-block: 96px 66px; min-height: 610px; display: flex; flex-direction: column; align-items: flex-start; }
 .pause-content > .eyebrow { font-size: 10px; color: #526147; }
 .pause-content h2 { font-size: 104px; line-height: .96; margin-top: 37px; }
 .pause-content h2 em { color: #5e7352; }
 .pause-description { font-size: 16px; line-height: 1.8; color: #4d5d43; margin-top: 24px; }
-.pause-caption { margin-top: auto; padding-top: 35px; font-size: 9px; color: #55634c; }
 
 /* 04 — the approach, set as a large personal statement */
 .approach { grid-template-columns: 1.16fr 1fr; gap: 100px; padding-block: 150px; }
@@ -346,18 +344,12 @@ h2 em { color: var(--olive); }
 @keyframes quiet-turn { to { transform: rotate(360deg); } }
 @keyframes progress-read { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes chapter-enter { from { opacity: .45; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes light-drift { from { transform: translateY(-3%); } to { transform: translateY(3%); } }
 @supports (animation-timeline: scroll()) {
   .motion-enabled .reading-progress { animation: progress-read linear both; animation-timeline: scroll(root block); }
 }
 @supports (animation-timeline: view()) {
   .motion-enabled .manifesto-line { animation: chapter-enter linear both; animation-timeline: view(block); animation-range: entry 20% cover 38%; }
   .motion-paused .manifesto-line { animation: none; opacity: 1; transform: none; }
-  @media (min-width: 901px) {
-    /* One restrained photographic depth effect, native and compositor-only. */
-    .pause-image { height: 110%; top: -5%; }
-    .motion-enabled .pause-image { animation: light-drift linear both; animation-timeline: view(block); animation-range: entry 0% exit 100%; }
-  }
 }
 
 @media (min-width: 1600px) {
@@ -642,8 +634,6 @@ h2 em { color: var(--olive); }
   .pause-content > .eyebrow { font-size: 9px; max-width: 230px; }
   .pause-content h2 { font-size: 77px; margin-top: 32px; }
   .pause-description { font-size: 15px; margin-top: 23px; }
-  .pause-image { object-position: 49% 50%; opacity: .65; }
-  .pause-caption { font-size: 8px; max-width: 260px; }
   .approach { grid-template-columns: 1fr; gap: 35px; }
   .approach h2 { font-size: 67px; margin-top: 29px; line-height: 1.05; }
   .approach-content { padding-top: 0; }
@@ -818,8 +808,6 @@ h2 em { color: var(--olive); }
   .pause-content > .eyebrow { font-size: 8px; max-width: 230px; }
   .pause-content h2 { font-size: 65px; line-height: 1.02; margin-top: 32px; }
   .pause-description { font-size: 14px; line-height: 1.85; margin-top: 21px; }
-  .pause-image { object-position: 45% center; opacity: .6; }
-  .pause-caption { font-size: 8px; max-width: 230px; }
   .approach { gap: 30px; }
   .approach h2 { font-size: 55px; line-height: 1.09; margin-top: 26px; }
   .approach-content .lead { font-size: 30px; line-height: 1.28; }

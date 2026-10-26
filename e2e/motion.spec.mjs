@@ -49,7 +49,6 @@ test('normal motion reflows at phone, tablet and desktop widths', async ({ page 
       await page.getByRole('button', { name: 'Приостановить анимацию', exact: true }).click();
       await page.screenshot({ path: testInfo.outputPath(`editorial-${width}.png`) });
       await page.locator('.pause-section').scrollIntoViewIfNeeded();
-      await page.locator('.pause-image').evaluate(image => image.decode());
       await page.screenshot({ path: testInfo.outputPath(`atmosphere-${width}.png`) });
       await page.getByRole('button', { name: 'Включить анимацию', exact: true }).click();
     }
