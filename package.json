@@ -1,0 +1,9 @@
+{
+  "name": "anastasia-burashova-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "preview": "python -m http.server 4173 --directory site"
+  }
+}
